@@ -103,7 +103,7 @@ export default function Register() {
           width: 360px;
           padding: 40px;
           border-radius: 24px;
-          background: #fff;
+          background: #ffffffff;
           box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
           display: flex;
           flex-direction: column;
@@ -113,24 +113,24 @@ export default function Register() {
 
         .logo {
           letter-spacing: 3px;
-          color: #999;
+          color: #757575ff;
           margin: 0;
         }
 
         h3 {
-          color: #888;
+          color: #757575ff;
           letter-spacing: 2px;
         }
 
         input {
           border-radius: 999px;
-          border: 1px solid #ccc;
+          border: 1px solid #000000ff;
           padding: 12px 18px;
         }
 
         button {
           border-radius: 999px;
-          border: 1px solid #aaa;
+          border: 1px solid #000000ff;
           padding: 10px;
           font-weight: 700;
           cursor: pointer;
@@ -139,7 +139,7 @@ export default function Register() {
 
         button:hover {
           background: #000;
-          color: #fff;
+          color: #0c0909ff;
         }
 
         .error-float {
@@ -160,11 +160,11 @@ export default function Register() {
 
         .register {
           font-size: 12px;
-          color: #666;
+          color: #000000ff;
         }
 
         .register a {
-          color: #000;
+          color: #000000ff;
           font-weight: 700;
         }
       `}</style>

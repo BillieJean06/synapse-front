@@ -76,7 +76,7 @@ export default function Login() {
       <style jsx>{`
         .login-wrap {
           height: 100vh;
-          background: #fff;
+          background: #ffffffff;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -87,7 +87,7 @@ export default function Login() {
           padding: 40px;
           border-radius: 24px;
           background: #fff;
-          box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 10px 35px rgba(78, 53, 187, 0.75);
           text-align: center;
           display: flex;
           flex-direction: column;
@@ -108,14 +108,14 @@ export default function Login() {
 
         .input {
           border-radius: 999px;
-          border: 1px solid #ccc;
+          border: 1px solid #000000ff;
           padding: 12px 18px;
           font-size: 14px;
           outline: none;
         }
 
         .input:focus {
-          border-color: #aaa;
+          border-color: #000000ff;
         }
 
         .input.error {
@@ -133,13 +133,13 @@ export default function Login() {
 
         .forgot {
           font-size: 12px;
-          color: #666;
+          color: #000000ff;
           text-decoration: none;
         }
 
         button {
           border-radius: 999px;
-          border: 1px solid #aaa;
+          border: 1px solid #000000ff;
           padding: 10px;
           background: transparent;
           font-weight: 700;
@@ -153,7 +153,7 @@ export default function Login() {
 
         .register {
           font-size: 12px;
-          color: #666;
+          color: #000000ff;
         }
 
         .register a {
