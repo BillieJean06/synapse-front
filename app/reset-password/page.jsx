@@ -1,33 +1,20 @@
-"use client"
-import { useSearchParams } from "next/navigation"
-import { useState } from "react"
+"use client";
 
-export default function Reset() {
-  const token = useSearchParams().get("token")
-  const [password, setPassword] = useState("")
-  const [msg, setMsg] = useState("")
+import { Suspense } from "react";
+import ResetClient from "./reset-client";
 
-  async function reset() {
-    setMsg("")
-    const r = await fetch("https://back-synapse.vercel.app/reset-password", {
-      method:"POST",
-      headers:{ "Content-Type":"application/json" },
-      body: JSON.stringify({ token, password })
-    })
-    const data = await r.json()
-    setMsg(data.success ? "Senha alterada! Vá para o login." : data.message)
-  }
-
+export default function ResetPage() {
   return (
-    <main style={box}>
-      <h2>Nova senha</h2>
-      <input type="password" placeholder="Nova senha" value={password} onChange={e=>setPassword(e.target.value)} />
-      <button onClick={reset}>Alterar</button>
-      <p>{msg}</p>
-    </main>
-  )
+    <Suspense fallback={<div style={center}>Carregando...</div>}>
+      <ResetClient />
+    </Suspense>
+  );
 }
 
-const box = {
-  minHeight:"100vh",background:"#000",color:"#fff",display:"grid",placeItems:"center"
-}
+const center = {
+  minHeight: "100vh",
+  display: "grid",
+  placeItems: "center",
+  background: "#000",
+  color: "#fff",
+};
