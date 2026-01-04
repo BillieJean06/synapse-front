@@ -23,7 +23,7 @@ export default function Register() {
     setLoading(true);
 
     try {
-      const res = await fetch("https://back-Neodits.vercel.app/register", {
+      const res = await fetch("https://back-neodits-szma.vercel.app/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

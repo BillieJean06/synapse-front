@@ -8,11 +8,14 @@ export default function ResetClient() {
   const [msg, setMsg] = useState("");
 
   async function reset() {
-    const r = await fetch("https://back-Neodits.vercel.app/reset-password", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ token, password }),
-    });
+    const r = await fetch(
+      "https://back-neodits-szma.vercel.app/reset-password",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token, password }),
+      }
+    );
 
     const data = await r.json();
     setMsg(data.success ? "Senha alterada! Vá para o login." : data.message);

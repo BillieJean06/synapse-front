@@ -8,11 +8,14 @@ export default function Forgot() {
   async function send() {
     setMsg("");
 
-    const r = await fetch("https://back-Neodits.vercel.app/forgot-password", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email }),
-    });
+    const r = await fetch(
+      "https://back-neodits-szma.vercel.app/forgot-password",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      }
+    );
 
     const data = await r.json();
     setMsg(data.success ? "Confira seu e-mail." : data.message);
