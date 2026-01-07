@@ -1,15 +1,17 @@
 import { NextResponse } from "next/server";
 
 export function middleware(req) {
-  const token = req.cookies.get("Neodits_token")?.value;
+  const token = req.cookies.get("neodits_token")?.value;
 
-  const protectedRoutes = ["/dashboard", "/admin"];
-
-  if (protectedRoutes.some((route) => req.nextUrl.pathname.startsWith(route))) {
-    if (!token) {
-      return NextResponse.redirect(new URL("/login", req.url));
-    }
+  if (!token && req.nextUrl.pathname.startsWith("/dashboard")) {
+    return NextResponse.redirect(new URL("/login", req.url));
   }
 
-  return NextResponse.next();
+  if (token && req.nextUrl.pathname === "/login") {
+    return NextResponse.redirect(new URL("/dashboard", req.url));
+  }
 }
+
+export const config = {
+  matcher: ["/dashboard/:path*", "/login"],
+};
